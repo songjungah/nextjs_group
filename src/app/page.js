@@ -1,95 +1,50 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
+import logo from "@/assets/label.png";
+import ImageSlider from "@/component/image-slider/image-slider";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <header className={styles.header}>
+        <div className={styles.slideshow}>
+          <ImageSlider />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className={styles.hero}>
+          <h1>우리 동아리 홈페이지</h1>
+          <div className={styles.cta}>
+            <Link href="/about">소개</Link>
+            <Link href="/group">게시글보기</Link>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section>
+          <p>안녕하세요, 우리 동아리 입니다.</p>
+          <p>우리 동아리 홈페이지에 오신걸 환영합니다.</p>
+        </section>
+      </main>
+    </div>
   );
 }
+
+
+
+/*
+  ==> /app/page.js
+  /about ==> /app/group/page.js
+  /group ==> /app/group/share/page.js
+  /group share ==> /app/group/share/page.js
+  /group/[동적URL] ==> /app/group/[slug]/page.js
+
+  <우리 동아리 홈페이지 만들기>
+  바탕화면의 nextjs 폴더에서 powershell 열고
+  npx create-next-app nextjs_group 입력
+  typescript : no
+  eslint: no
+  tailwind css : no
+  src : yse
+  app router : yes
+  import alias : no
+*/
