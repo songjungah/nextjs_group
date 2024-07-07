@@ -37,3 +37,12 @@ export default function RootLayout({ children }) {
 
 
 // npm run dev
+
+// vercal 에 업로드
+// github 에 프로젝트 업로드
+// vercal 로그인
+// new project
+// 업로드한 프로젝트 Import
+// [Install Command OVERRIDE] -> npm install
+// .env.local 데이터를 Enviroment Variables 에 모두 입력
+// Deploy 클릭
